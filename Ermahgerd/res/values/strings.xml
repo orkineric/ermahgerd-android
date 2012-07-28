@@ -1,0 +1,10 @@
+<resources>
+
+    <string name="app_name">Ermahgerd</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_ermahgerd">Ermahgerd</string>
+    <string name="input_box_hint">ERNTER YER WERDS HER</string>
+    <string name="translate_button_text">TRERNSLERT</string>
+
+</resources>
