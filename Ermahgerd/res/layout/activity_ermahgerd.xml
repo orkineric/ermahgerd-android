@@ -1,35 +1,73 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
+    xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/LinearLayout1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="@dimen/padding_medium"
-        android:text="@string/input_box_hint"
-        tools:context=".Ermahgerd" />
+    android:layout_gravity="center_horizontal"
+    android:orientation="vertical" 
+    android:weightSum="8"
+    >
 
     <EditText
-        android:id="@+id/editText1"
+        android:id="@+id/inputText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_weight="3"
         android:ems="10"
         android:hint="@string/input_box_hint"
         android:inputType="textMultiLine"
         android:lines="3"
-        android:minLines="3" />
+        android:minLines="3" >
 
-    
-    <com.google.ads.AdView android:id="@+id/adView"
-                         android:layout_width="wrap_content"
-                         android:layout_height="wrap_content"
-                         ads:adUnitId="a1501351d89f627"
-                         ads:adSize="BANNER"
-                         ads:testDevices="TEST_EMULATOR, 0A3BAB1016013003"
-                         ads:loadAdOnCreate="true"/>
-    
+        <requestFocus />
+
+    </EditText>
+
+    <LinearLayout
+        android:id="@+id/ButtonLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="1" >
+
+        <Button
+            android:id="@+id/translateButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Translate" />
+
+        <Button
+            android:id="@+id/copyButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Copy Text" />
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/outputText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:layout_weight="3"
+        android:ems="10"
+        android:gravity="top"
+        android:inputType="textMultiLine" >
+
+    </EditText>
+
+    <com.google.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="1"
+        ads:adSize="BANNER"
+        ads:adUnitId="a1501351d89f627"
+        ads:loadAdOnCreate="true"
+        ads:testDevices="TEST_EMULATOR, 0A3BAB1016013003" >
+
+    </com.google.ads.AdView>
+
 </LinearLayout>
