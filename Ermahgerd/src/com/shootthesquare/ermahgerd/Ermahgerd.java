@@ -18,7 +18,8 @@ public class Ermahgerd extends Activity {
 	private EditText outputText;
 	private Button translateButton; 
 	private Button copyButton;
-	
+	private Dialect ermahgerd = new ErmahgerdDialect();
+
 	@Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,7 +41,8 @@ public class Ermahgerd extends Activity {
     private OnClickListener TranslateButtonListener = new OnClickListener() {
 		   public void onClick(View v) {
 			   String textEntered = inputText.getText().toString();
-			 outputText.setText(textEntered);
+			   String translatedText = ermahgerd.translate(textEntered);
+			   outputText.setText(translatedText);
 			 InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
 		        imm.hideSoftInputFromWindow(inputText.getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
 		   }
