@@ -8,9 +8,12 @@ public class ErmahgerdDialect implements Dialect {
 
 	public String translate(String input) {
 
+		if (input.length()<1) return "";
 		String[] splitInput = input.split(" ");
-		List<String> myList = new ArrayList<String>();
+		if (splitInput.length<1) return "";
 		
+		List<String> myList = new ArrayList<String>();
+
 		for(String word: splitInput)
 		{
 			if (word.length() == 1)
@@ -29,9 +32,8 @@ public class ErmahgerdDialect implements Dialect {
 			
 			myList.add(word);
 		}
-		
+				
 		StringBuilder combined = new StringBuilder();
-		
 		for(String word: myList)
 		{
 			combined.append(word);

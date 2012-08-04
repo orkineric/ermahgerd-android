@@ -1,5 +1,6 @@
 package com.shootthesquare.ermahgerd;
 
+import android.R.color;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
@@ -30,8 +31,6 @@ public class Ermahgerd extends Activity {
         translateButton = (Button)findViewById(R.id.translateButton);
         copyButton = (Button)findViewById(R.id.copyButton);
                 
-        outputText.setEnabled(false);
-        
         translateButton.setOnClickListener(TranslateButtonListener);
         copyButton.setOnClickListener(CopyButtonListener);
         

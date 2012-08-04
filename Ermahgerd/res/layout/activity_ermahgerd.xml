@@ -5,20 +5,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center_horizontal"
-    android:orientation="vertical" 
-    android:weightSum="8"
-    >
+    android:background="@color/blue"
+    android:orientation="vertical"
+    android:weightSum="8" >
 
     <EditText
         android:id="@+id/inputText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="3"
+        android:layout_weight="0.69"
+        android:background="@color/light_blue"
         android:ems="10"
         android:hint="@string/input_box_hint"
         android:inputType="textMultiLine"
         android:lines="3"
-        android:minLines="3" >
+        android:minLines="3"
+        android:scrollHorizontally="false" >
 
         <requestFocus />
 
@@ -29,7 +31,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_weight="1" >
+        android:layout_weight=".69" >
 
         <Button
             android:id="@+id/translateButton"
@@ -51,9 +53,11 @@
         android:layout_height="wrap_content"
         android:layout_gravity="top"
         android:layout_weight="3"
+        android:background="@color/light_blue"
         android:ems="10"
         android:gravity="top"
-        android:inputType="textMultiLine" >
+        android:inputType="textMultiLine|textNoSuggestions" 
+        android:focusable="false" >
 
     </EditText>
 
@@ -61,12 +65,12 @@
         android:id="@+id/adView"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_weight="1"
+        android:layout_gravity="bottom|center_horizontal"
         ads:adSize="BANNER"
         ads:adUnitId="a1501351d89f627"
         ads:loadAdOnCreate="true"
-        ads:testDevices="TEST_EMULATOR, 0A3BAB1016013003" >
+        ads:testDevices="TEST_EMULATOR, 0A3BAB1016013003"
+        android:gravity="bottom" >
 
     </com.google.ads.AdView>
 
