@@ -1,4 +1,4 @@
-package com.shootthesquare.ermahgerd;
+package com.shootthesquare.ermahgerdtranslator;
 
 public class ParseResults {
 	

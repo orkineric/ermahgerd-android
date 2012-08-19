@@ -1,4 +1,4 @@
-package com.shootthesquare.ermahgerd;
+package com.shootthesquare.ermahgerdtranslator;
 
 import java.util.ArrayList;
 import java.util.List;
