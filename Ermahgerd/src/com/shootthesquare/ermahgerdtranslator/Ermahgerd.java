@@ -304,7 +304,7 @@ public class Ermahgerd extends Activity {
 				   int charLen = 37;
 				   numchars = text.length();
 
-				   if (numchars>28) numlines = 2;
+				   if (numchars>14) numlines = 2;
 	
 			        String sub1 = "";
 			        String sub2 = "";
@@ -330,7 +330,7 @@ public class Ermahgerd extends Activity {
 			        paint.setColor(Color.WHITE);
 			        paint.setAntiAlias(true);
 			        paint.setTextSize(60);
-			        paint.setTypeface(Typeface.MONOSPACE);
+			        paint.setTypeface(Typeface.DEFAULT_BOLD);
 			        paint.setStyle(Paint.Style.FILL_AND_STROKE);
 			        int width = cs.getWidth();
 			        
