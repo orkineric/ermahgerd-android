@@ -4,5 +4,10 @@
     <color name="blue">#3b5998</color>
     <color name="light_blue">#afcfff</color>
     <color name="black">#000000</color>
-
+    <style name="Button">
+  		<item name="android:background">@drawable/custom_button</item>
+	</style>
+    <color name="Green">#cc007B16</color>
+    <color name="Light_Green">#cc6CAC83</color>
+    <color name="White">#FFFFFF</color>
 </resources>

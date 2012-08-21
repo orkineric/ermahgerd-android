@@ -5,75 +5,87 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center_horizontal"
-    android:background="@color/blue"
+    android:background="@color/black"
     android:orientation="vertical" >
-
+
     <EditText
         android:id="@+id/inputText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:background="@color/light_blue"
+        android:layout_gravity="center_vertical"
+        android:background="@drawable/textbox"
         android:ems="10"
         android:hint="@string/input_box_hint"
         android:inputType="textMultiLine"
         android:lines="1"
         android:minLines="1"
-        android:scrollHorizontally="false" />
+        android:scrollHorizontally="false"
+        android:textColor="@color/White" />
 
     <LinearLayout
         android:id="@+id/ImageWrapperLayout"
-        android:layout_width="fill_parent"
+        android:layout_width="wrap_content"
         android:layout_height="1px"
-        android:layout_weight="10" >
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="10"
+        android:orientation="vertical" >
 
         <ImageView
             android:id="@+id/workingImageView"
-            android:layout_width="fill_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:scaleType="fitXY"
             android:src="@drawable/layers" />
     </LinearLayout>
-
+
     <EditText
         android:id="@+id/outputText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:background="@color/light_blue"
+        android:background="@drawable/textbox"
         android:ems="10"
         android:focusable="false"
         android:hint="ERTPERT TERXT"
-        android:inputType="textMultiLine|textNoSuggestions" />
+        android:inputType="textNoSuggestions"
+        android:textColor="@color/White" />
 
     <LinearLayout
         android:id="@+id/ButtonLayout"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_weight=".1" >
 
         <Button
             android:id="@+id/NewButton"
+            style="@style/Button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="New" />
 
         <Button
             android:id="@+id/shareButton"
+            style="@style/Button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="Share" />
 
         <Button
             android:id="@+id/translateButton"
+            style="@style/Button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="Translate" />
 
         <Button
             android:id="@+id/copyButton"
+            style="@style/Button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="Copy" />
     </LinearLayout>
 
@@ -85,6 +97,7 @@
 
         <Button
             android:id="@+id/TopButton"
+            style="@style/Button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -92,6 +105,7 @@
 
         <Button
             android:id="@+id/bottomButton"
+            style="@style/Button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -99,6 +113,7 @@
 
         <Button
             android:id="@+id/splitButton"
+            style="@style/Button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -106,23 +121,11 @@
 
         <Button
             android:id="@+id/TalkButton"
+            style="@style/Button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Talk" />
     </LinearLayout>
-
-    <com.google.ads.AdView
-        android:id="@+id/adView"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|center_horizontal"
-        android:layout_weight=".1"
-        ads:adSize="BANNER"
-        ads:adUnitId="a1501351d89f627"
-        ads:loadAdOnCreate="true"
-        ads:testDevices="TEST_EMULATOR, 0A3BAB1016013003"
-        android:gravity="bottom" >
-    </com.google.ads.AdView>
 
 </LinearLayout>
