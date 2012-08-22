@@ -20,6 +20,8 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore.Images;
+import android.speech.tts.TextToSpeech;
+import android.speech.tts.TextToSpeech.OnInitListener;
 import android.text.ClipboardManager;
 import android.view.Menu;
 import android.view.View;
@@ -30,7 +32,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-public class Ermahgerd extends Activity {
+public class Ermahgerd extends Activity implements OnInitListener {
 	private View imageWrapperLayout;
 	private ImageView workingImage;
 	private EditText inputText;
@@ -58,7 +60,7 @@ public class Ermahgerd extends Activity {
 	private static final int SELECT_PHOTO = 100;
 
 	private Resources r;
-	
+	private TextToSpeech talker;
 	
 	
 	@Override
@@ -109,6 +111,13 @@ public class Ermahgerd extends Activity {
             }
         }
         
+        talker = new TextToSpeech(this, this);
+        
+	}
+	
+	@Override
+	 public void onDestroy() {
+		talker.shutdown();
 	}
 
 	 private OnClickListener WorkingPictureListener = new OnClickListener() {
@@ -228,11 +237,7 @@ public class Ermahgerd extends Activity {
 						   imm.hideSoftInputFromWindow(inputText.getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
 						   String translatedText = outputText.getText().toString();
 
-						   Context context = getApplicationContext();
-							   CharSequence text = "Coming soon!";
-							   int duration = Toast.LENGTH_SHORT;
-							   Toast toast = Toast.makeText(context, text, duration);
-							   toast.show();
+						   talker.speak(translatedText, TextToSpeech.QUEUE_FLUSH, null);
 					   }
 				   };
 						   
@@ -363,6 +368,11 @@ public class Ermahgerd extends Activity {
         getMenuInflater().inflate(R.menu.activity_ermahgerd, menu);
         return true;
     }
+
+	public void onInit(int status) {
+		// TODO Auto-generated method stub
+		
+	}
 
     
 }
